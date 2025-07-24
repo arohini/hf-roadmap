@@ -1,5 +1,6 @@
 from transformers import pipeline
 
+
 classifier = pipeline("sentiment-analysis")
 sentiment_result = classifier(["I've been waiting for a HuggingFace course my whole life.",
                      "While I'm working always getting distracted",
@@ -50,8 +51,7 @@ print(qna_res)
 
 
 summarizer = pipeline("summarization")
-text_summ = summarizer("""
-Cycling, in its most familiar form, dates back to at least the 19th century. One example of an early bicycle was 
+text_summ = summarizer("""Cycling, in its most familiar form, dates back to at least the 19th century. One example of an early bicycle was 
 known as the “hobby horse”, and it later became the “Dandy horse” and then the “accelerator”. 
 Early cycling was reserved for the upper-classes and was seen as highly fashionable and decorous – particularly for men.
 
@@ -71,8 +71,14 @@ By the 1890s, several million women around the world were cycling.
 
 The influx of female cyclists on the streets created a moral panic for the Victorians. 
 The image of the cycling woman came to represent a new type of woman with feminist ambition. 
-This led to a discourse known simply as the “woman question”.
-"""
+This led to a discourse known simply as the “woman question”."""
 )
 
 print(text_summ)
+
+
+# This needs model owner permission
+# translator = pipeline("translation", model="Helsinki-NLP/opus-mt-fr-en")
+#
+# translated_context = translator("Ce cours est produit par Hugging Face.")
+# print(translated_context)
